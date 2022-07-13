@@ -28,7 +28,7 @@ def start_message(message):
 def message_reply(message):
     text = message.text.split()
     len_text = len(text)
-        k = 0
+    k = 0
     if len_text == 1:
         if any(map(str.isdigit, text[0])) is True:
             for i in text[0]:
