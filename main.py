@@ -29,11 +29,10 @@ def message_reply(message):
     text = message.text.split()
     len_text = len(text)
     if len_text == 1:
-if len_text == 1:
-        if any(map(str.isdigit, text[0])) is True:
-            bot.send_message(message.chat.id, schedule_control(text[0]))
-        if len_text != 1:
-            pass
+            if any(map(str.isdigit, text[0])) is True:
+                bot.send_message(message.chat.id, schedule_control(text[0]))
+            if len_text != 1:
+                pass
 
 
 
