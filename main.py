@@ -27,20 +27,9 @@ def start_message(message):
 @bot.message_handler(content_types=['text'])
 def message_reply(message):
     text = message.text.split()
-    len_text = len(text)
-    k = 0
-    if len_text == 1:
-        if any(map(str.isdigit, text[0])) is True:
-            for i in text[0]:
-                if i.isalpha() is True:
-                    k = + 1
-                else:
-                    pass
-            if k == 0:
-                bot.send_message(message.chat.id, schedule_control(text[0]))
-            else:
-                pass
-    if len_text != 1:
+    if len(text) == 1 and len(text[0]) == 5 and text[0][2] == '.':
+        bot.send_message(message.chat.id, schedule_control(text[0]))
+    if len(text) != 1:
         pass
 
 
